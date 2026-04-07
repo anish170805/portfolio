@@ -1,5 +1,45 @@
 export const projects = [
   {
+    id: "gyanpath",
+    name: "GyanPath AI Roadmap Agent",
+    icon: "🧭",
+    repoUrl: "https://github.com/anish170805/gyanpath",
+    shortDesc: "AI-powered learning roadmap generator that creates structured paths, resources, and quizzes for any skill.",
+    tags: ["Python", "GenAI", "LLM Agents", "Learning Systems", "Education AI"],
+
+    conversationFlow: {
+      start: {
+        message: "GyanPath is an AI learning roadmap generator that helps users plan how to learn any skill. Instead of manually searching for tutorials and courses, users simply specify what they want to learn and the system generates a structured roadmap.",
+        options: ["Overview", "How It Works", "Features", "Tech Stack", "Status"]
+      },
+
+      Overview: {
+        message: "The goal of GyanPath is to simplify self-learning. Users often struggle with figuring out what to learn first, which resources to follow, and how to practice. GyanPath solves this by generating a clear step-by-step roadmap tailored to the topic.",
+        options: ["How It Works", "Features", "Tech Stack", "← Start over"]
+      },
+
+      "How It Works": {
+        message: "The user provides a skill or domain they want to learn. The AI agent generates a structured roadmap including topics, recommended resources, and practice tasks. The system organizes the content in a logical progression so learners can move from basics to advanced concepts.",
+        options: ["Features", "Tech Stack", "← Start over"]
+      },
+
+      Features: {
+        message: "GyanPath focuses on structured learning. It generates topic-wise learning paths, suggests learning resources, recommends projects to build skills, and can include quizzes to test understanding.",
+        options: ["Overview", "Tech Stack", "Status", "← Start over"]
+      },
+
+      "Tech Stack": {
+        message: "The project uses Python and LLM APIs to generate structured learning plans. The system relies on prompt engineering and agent workflows to organize topics, resources, and exercises into a coherent roadmap.",
+        options: ["Overview", "Status", "← Start over"]
+      },
+
+      Status: {
+        message: "This project is currently a prototype focused on building the core roadmap generation workflow. Future improvements could include personalized learning paths, progress tracking, and a full user interface.",
+        options: ["Overview", "← Start over"]
+      }
+    }
+  },
+  {
     id: "anveshak-ai",
     name: "Anveshak AI",
     icon: "🔍",
@@ -90,40 +130,6 @@ export const projects = [
     Status: {
       message: "This project is currently a prototype focused on building the core agent workflow. Future improvements could include better data cleaning, vector-based dataset search, and a user interface.",
       options: ["Overview", "← Start over"]
-    }
-  }
-},
-  {
-  id: "flipkart-review-analysis",
-  name: "Flipkart Review Analysis",
-  icon: "🛒",
-    repoUrl: "https://github.com/anish170805/FlipkartReviewAnalysis",
-  shortDesc: "Machine learning pipeline that analyzes Flipkart product reviews and predicts sentiment.",
-  tags: ["Python", "NLP", "Flask", "Pandas", "Scikit-learn"],
-  conversationFlow: {
-    start: {
-      message: "This project analyzes Flipkart product reviews and predicts whether a review expresses positive or negative sentiment. It demonstrates a full machine learning workflow from data ingestion to model deployment.",
-      options: ["ML Pipeline", "Dataset", "Model", "API Usage"]
-    },
-
-    "ML Pipeline": {
-      message: "The system follows a structured ML pipeline including data ingestion, validation, transformation, model training, and evaluation. Each stage is implemented as modular components to keep the workflow reproducible and organized.",
-      options: ["Dataset", "Model", "API Usage", "← Start over"]
-    },
-
-    "Dataset": {
-      message: "The dataset comes from Kaggle and contains Flipkart product reviews along with associated metadata. The data is downloaded, validated, cleaned, and transformed before being used for model training.",
-      options: ["ML Pipeline", "Model", "← Start over"]
-    },
-
-    "Model": {
-      message: "The project applies natural language processing techniques to convert text reviews into machine-readable features and trains a machine learning model to classify sentiment.",
-      options: ["Dataset", "API Usage", "← Start over"]
-    },
-
-    "API Usage": {
-      message: "A Flask API exposes endpoints such as /predict for real-time sentiment prediction and /train to retrain the model. This allows the model to be used as a service by other applications.",
-      options: ["ML Pipeline", "Model", "← Start over"]
     }
   }
 }

@@ -72,7 +72,7 @@ const Home = () => {
             <div>
               <h3 className="font-bold text-sm mb-6 uppercase tracking-wider">Tech Stack</h3>
               <div className="flex flex-wrap gap-2">
-                {["Python","SQL","LangChain","LangGraph","Machine Learning","Pandas","Scikit-learn","Git"].map((tech) => (
+                {["Python","SQL","LangChain","LangGraph","GenAI","LLM Agents","Machine Learning","Pandas","Git"].map((tech) => (
                   <span 
                     key={tech} 
                     className="px-3 py-1.5 border border-border rounded-lg text-xs font-mono text-text-muted bg-surface hover:border-text transition-colors cursor-default"
