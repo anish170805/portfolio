@@ -1,9 +1,51 @@
 export const projects = [
   {
+    id: "ease",
+    name: "EASE Voice Sales Agent",
+    icon: "🎙️",
+    repoUrl: "https://github.com/anish170805/EASE",
+    liveUrl: "https://ease-weld.vercel.app/",
+    shortDesc: "AI-powered voice sales agent that qualifies leads and captures contact info through real-time conversation using LiveKit, LangGraph, and Groq.",
+    tags: ["Python", "LiveKit", "LangGraph", "Voice AI", "LLM Agents", "Sales Automation"],
+
+    conversationFlow: {
+      start: {
+        message: "EASE is a real-time voice sales agent that conducts natural phone-style conversations to qualify leads. It listens to users via speech, extracts their details intelligently, and saves structured lead profiles — all without any human rep involved.",
+        options: ["Overview", "How It Works", "Features", "Tech Stack", "Status"]
+      },
+
+      Overview: {
+        message: "Sales teams often lose leads because follow-up is slow or inconsistent. EASE automates the first touchpoint — it joins a LiveKit room, talks to a prospect in real time, collects their name, company, service interest, budget, and contact info, then stores a scored lead profile automatically.",
+        options: ["How It Works", "Features", "Tech Stack", "← Start over"]
+      },
+
+      "How It Works": {
+        message: "User speech is transcribed by Deepgram STT. Each turn is routed through a LangGraph state machine where a Groq LLM decides what fields are still missing and asks one targeted follow-up question at a time. Once all fields are collected, a closing flow confirms the lead, saves it to leads.json with a computed lead score, and gracefully ends the call.",
+        options: ["Features", "Tech Stack", "← Start over"]
+      },
+
+      Features: {
+        message: "EASE handles the full lead capture cycle: real-time STT/TTS via Deepgram, stateful multi-turn conversation via LangGraph, intelligent field extraction that avoids re-asking collected info, a closing confirmation flow, lead scoring based on completeness and priority, and a FastAPI token server exposing /token and /leads endpoints for frontend integration.",
+        options: ["Overview", "Tech Stack", "Status", "← Start over"]
+      },
+
+      "Tech Stack": {
+        message: "Built entirely in Python. Core stack: LiveKit Agents for real-time audio rooms, LangGraph for the stateful conversation graph, Groq LLM (via langchain-groq) for response generation and extraction, Deepgram for both STT and TTS, Pydantic for typed state, and FastAPI for the token server. Config via .env with dotenv.",
+        options: ["Overview", "Status", "← Start over"]
+      },
+
+      Status: {
+        message: "EASE is a working prototype with the full lead capture pipeline functional. The repo includes experimental nodes (router, extract_lead, finalize_lead) for alternate workflows. Potential next steps include a live dashboard UI, CRM integrations, and multi-language support.",
+        options: ["Overview", "← Start over"]
+      }
+    }
+  },
+  {
     id: "gyanpath",
     name: "GyanPath AI Roadmap Agent",
     icon: "🧭",
     repoUrl: "https://github.com/anish170805/gyanpath",
+    liveUrl: "https://gyanpath-five.vercel.app/",
     shortDesc: "AI-powered learning roadmap generator that creates structured paths, resources, and quizzes for any skill.",
     tags: ["Python", "GenAI", "LLM Agents", "Learning Systems", "Education AI"],
 
@@ -69,36 +111,7 @@ export const projects = [
       }
     }
   },
-  {
-  id: "front9",
-  name: "Front9",
-  icon: "⚙️",
-    repoUrl: "https://github.com/anish170805/front9",
-  shortDesc: "Agentic frontend builder that generates complete web project files in your local system.",
-  tags: ["Python", "LangChain", "LangGraph", "LLM Agents", "Code Generation"],
-  conversationFlow: {
-    start: {
-      message: "Front9 is an experimental agent that generates frontend project files based on a prompt. Instead of manually setting up folders and files, the agent creates a complete project structure directly in your local system.",
-      options: ["How It Works", "Tech Stack", "Capabilities", "Status"]
-    },
-    "How It Works": {
-      message: "The agent takes a description of a website and plans the required structure. Using LangGraph workflows, it generates folders and code files, then writes them into a new directory called 'generated_project' in the local environment.",
-      options: ["Tech Stack", "Capabilities", "Status", "← Start over"]
-    },
-    "Tech Stack": {
-      message: "The project is built entirely as a backend agent using Python, LangChain, and LangGraph. The agent orchestrates LLM reasoning steps to determine project structure and generate the necessary code files.",
-      options: ["How It Works", "Capabilities", "← Start over"]
-    },
-    "Capabilities": {
-      message: "Currently the agent focuses on basic frontend scaffolding. It can generate folder structures and starter files for websites based on user prompts. The generated project is saved locally so developers can immediately start editing or running it.",
-      options: ["How It Works", "Tech Stack", "Status", "← Start over"]
-    },
-    "Status": {
-      message: "This project is currently a prototype. It focuses on backend agent orchestration and file generation. Future improvements could include UI integration, better planning agents, and support for multiple frameworks.",
-      options: ["How It Works", "Capabilities", "← Start over"]
-    }
-  }
-},
+
   {
   id: "ret-jet",
   name: "Ret-Jet Data Agent",

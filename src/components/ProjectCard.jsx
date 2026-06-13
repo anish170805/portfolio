@@ -14,19 +14,33 @@ const ProjectCard = ({ project, onOpenChat }) => {
           {project.icon}
         </div>
         
-        {/* Repo Button - Replaces Status */}
-        {project.repoUrl && (
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-surface border border-border rounded-full text-[11px] font-mono font-medium text-text hover:bg-text hover:text-bg hover:border-text transition-all duration-200"
-          >
-            <Github size={12} />
-            <span>repo</span>
-          </a>
-        )}
+        {/* Repo + Live Buttons */}
+        <div className="flex items-center gap-2">
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-surface border border-border rounded-full text-[11px] font-mono font-medium text-text hover:bg-text hover:text-bg hover:border-text transition-all duration-200"
+            >
+              <Github size={12} />
+              <span>repo</span>
+            </a>
+          )}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-surface border border-border rounded-full text-[11px] font-mono font-medium text-text hover:bg-text hover:text-bg hover:border-text transition-all duration-200"
+            >
+              <ArrowUpRight size={12} />
+              <span>link</span>
+            </a>
+          )}
+        </div>
       </div>
 
       <h3 className="text-lg font-bold tracking-tight mb-2 relative z-10">{project.name}</h3>
