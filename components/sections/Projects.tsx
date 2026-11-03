@@ -274,7 +274,7 @@ export function Projects() {
     <section id="projects" className="scroll-mt-24 py-12 md:py-16">
       <Reveal>
         <div className="wrap">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
             <div className="flex-1">
               <SectionLabel n="02." title="Projects" line />
             </div>
@@ -315,10 +315,10 @@ export function Projects() {
                   <div
                     key={p.id}
                     data-slide
-                    className="min-w-0 flex-[0_0_85%] md:flex-[0_0_auto] md:basis-[420px]"
+                    className="min-w-0 flex-[0_0_100%] md:flex-[0_0_auto] md:basis-[420px]"
                   >
                     <div
-                      className={`glass group mr-5 flex h-[300px] min-w-0 flex-col gap-4 p-5 transition-[translate,scale,border-color] duration-[250ms] hover:-translate-y-1 hover:scale-[1.04] md:h-[320px] md:p-7 ${
+                      className={`glass group mr-3 flex h-[320px] min-w-0 flex-col gap-4 p-5 transition-[translate,scale,border-color] duration-[250ms] hover:-translate-y-1 hover:scale-[1.04] md:mr-5 md:p-7 ${
                         isActive ? "border-accent" : ""
                       }`}
                     >
@@ -341,8 +341,8 @@ export function Projects() {
                           </div>
                         </div>
                       </div>
-                      <div className="flex w-full flex-wrap items-center justify-between gap-3">
-                        <div className="flex flex-wrap items-center gap-2">
+                      <div className="flex w-full items-center gap-2">
+                        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
                           {p.links?.live && (
                             <IconLink href={p.links.live} label={p.links.liveLabel ?? "Live link"}>
                               <ExternalLink size={18} aria-hidden />
@@ -380,7 +380,7 @@ export function Projects() {
                             type="button"
                             aria-label={`Open ${p.name} project chat`}
                             onClick={() => openProject(i, p)}
-                            className="inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 rounded-full bg-accent px-5 font-label text-[13px] font-medium text-bg transition-[background-color,gap] duration-200 hover:gap-3 hover:bg-accent-hover"
+                            className="ml-auto inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 rounded-full bg-accent px-3 font-label text-[13px] font-medium text-bg transition-[background-color,gap] duration-200 hover:gap-3 hover:bg-accent-hover sm:px-5"
                           >
                             Chat
                             <ArrowRight size={16} aria-hidden />
