@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
+  <title id="title">Ret-Jet CSV analytics agent workflow</title>
+  <desc id="description">A CSV is loaded into a Streamlit session, registered with a Groq-powered agent, analyzed with tools, and returned as a written answer or chart path.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#b45309"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #3f2d1f; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #9a7b5f; }
+      .section { font-size: 15px; font-weight: 700; letter-spacing: 1.2px; fill: #9a5c1e; }
+      .node-title { font-size: 18px; font-weight: 700; }
+      .node-copy { font-size: 14px; fill: #604936; }
+      .label { font-size: 13px; font-weight: 700; fill: #9a5c1e; }
+      .panel { fill: #ffec99; fill-opacity: .16; stroke: #e6c46f; stroke-width: 1.5; }
+      .node { stroke: #b45309; stroke-width: 1.7; rx: 14; }
+      .arrow { fill: none; stroke: #b45309; stroke-width: 2; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+  <rect width="1440" height="1080" fill="#fffaf0"/>
+  <text class="title" x="60" y="58">Ret-Jet — how the CSV analytics agent works</text>
+  <text class="subtitle" x="60" y="96">Upload a dataset, ask in plain language, then let the agent choose analysis or visualization tools.</text>
+
+  <rect class="panel" x="42" y="140" width="1356" height="280" rx="22"/>
+  <text class="section" x="72" y="178">01 / LOAD A DATASET</text>
+  <rect class="node" x="75" y="215" width="260" height="145" fill="#ffec99"/>
+  <text class="node-title" x="98" y="254">Upload CSV</text>
+  <text class="node-copy" x="98" y="283"><tspan x="98">Choose a file in the</tspan><tspan x="98" dy="21">Streamlit sidebar.</tspan></text>
+  <path class="arrow" d="M335 287H395"/>
+  <rect class="node" x="395" y="215" width="260" height="145" fill="#ffd8a8"/>
+  <text class="node-title" x="418" y="254">Load and inspect</text>
+  <text class="node-copy" x="418" y="283"><tspan x="418">Read the dataframe;</tspan><tspan x="418" dy="21">show rows and columns.</tspan></text>
+  <path class="arrow" d="M655 287H715"/>
+  <rect class="node" x="715" y="215" width="260" height="145" fill="#ffc078"/>
+  <text class="node-title" x="738" y="254">Register data tools</text>
+  <text class="node-copy" x="738" y="283"><tspan x="738">Make the active dataframe</tspan><tspan x="738" dy="21">available to agent tools.</tspan></text>
+  <path class="arrow" d="M975 287H1035"/>
+  <rect class="node" x="1035" y="215" width="300" height="145" fill="#ffd8a8"/>
+  <text class="node-title" x="1058" y="254">Create coordinator</text>
+  <text class="node-copy" x="1058" y="283"><tspan x="1058">Groq LLM + LangChain</tspan><tspan x="1058" dy="21">agent + registered tools.</tspan></text>
+
+  <rect class="panel" x="42" y="455" width="1356" height="565" rx="22"/>
+  <text class="section" x="72" y="493">02 / ASK, ANALYZE, RESPOND</text>
+  <rect class="node" x="75" y="555" width="260" height="145" fill="#ffec99"/>
+  <text class="node-title" x="98" y="594">Ask a question</text>
+  <text class="node-copy" x="98" y="623"><tspan x="98">Chat input includes the</tspan><tspan x="98" dy="21">conversation so far.</tspan></text>
+  <path class="arrow" d="M335 627H395"/>
+  <rect class="node" x="395" y="555" width="270" height="145" fill="#ffd8a8"/>
+  <text class="node-title" x="418" y="594">Agent interprets intent</text>
+  <text class="node-copy" x="418" y="623"><tspan x="418">Choose an analysis tool</tspan><tspan x="418" dy="21">or a chart workflow.</tspan></text>
+  <path class="arrow" d="M665 627H716"/>
+  <polygon class="node" points="808,555 900,627 808,700 716,627" fill="#ffc9c9"/>
+  <text class="node-title" x="808" y="621" text-anchor="middle">Which tool?</text>
+  <text class="node-copy" x="808" y="644" text-anchor="middle">based on request</text>
+
+  <path class="arrow" d="M843 582C885 552 935 577 985 577"/>
+  <text class="label" x="908" y="532">analyze</text>
+  <rect class="node" x="985" y="510" width="345" height="135" fill="#ffc078"/>
+  <text class="node-title" x="1010" y="548">Pandas analytics</text>
+  <text class="node-copy" x="1010" y="577"><tspan x="1010">Run dataframe calculations</tspan><tspan x="1010" dy="21">and return the relevant results.</tspan></text>
+
+  <path class="arrow" d="M866 654C910 685 940 757 985 757"/>
+  <text class="label" x="898" y="735">chart / dashboard</text>
+  <rect class="node" x="985" y="690" width="345" height="135" fill="#ffd8a8"/>
+  <text class="node-title" x="1010" y="728">Create visualization</text>
+  <text class="node-copy" x="1010" y="757"><tspan x="1010">Generate a Matplotlib chart</tspan><tspan x="1010" dy="21">or dashboard and return its path.</tspan></text>
+
+  <path class="arrow" d="M1330 577H1370V840H800V855"/>
+  <path class="arrow" d="M1157 825V855"/>
+  <rect class="node" x="570" y="855" width="760" height="110" fill="#ffec99"/>
+  <text class="node-title" x="950" y="895" text-anchor="middle">Return findings and, when created, the chart path</text>
+  <text class="node-copy" x="950" y="925" text-anchor="middle">Streamlit shows the reply; ask a follow-up to continue the session.</text>
+  <path class="arrow dashed" d="M570 910H205V700"/>
+  <text class="label" x="315" y="895">follow-up question</text>
+</svg>

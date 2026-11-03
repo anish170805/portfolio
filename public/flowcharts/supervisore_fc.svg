@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
+  <title id="title">Supervisore durable order supervision workflow</title>
+  <desc id="description">A Next.js dashboard starts a supervised order run through FastAPI. Temporal runs a durable workflow that waits for events or timers, invokes a LangGraph agent, records actions, and owns completion.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#b45309"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #3f2d1f; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #9a7b5f; }
+      .section { font-size: 15px; font-weight: 700; letter-spacing: 1.2px; fill: #9a5c1e; }
+      .node-title { font-size: 18px; font-weight: 700; }
+      .node-copy { font-size: 14px; fill: #604936; }
+      .label { font-size: 13px; font-weight: 700; fill: #9a5c1e; }
+      .panel { fill: #ffec99; fill-opacity: .16; stroke: #e6c46f; stroke-width: 1.5; }
+      .node { stroke: #b45309; stroke-width: 1.7; rx: 14; }
+      .arrow { fill: none; stroke: #b45309; stroke-width: 2; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+  <rect width="1440" height="1080" fill="#fffaf0"/>
+  <text class="title" x="60" y="58">Supervisore — durable order supervision</text>
+  <text class="subtitle" x="60" y="96">Temporal owns each order's lifecycle; a LangGraph agent reasons when events or scheduled wake-ups call for attention.</text>
+
+  <rect class="panel" x="42" y="140" width="1356" height="260" rx="22"/>
+  <text class="section" x="72" y="178">01 / CREATE A SUPERVISION RUN</text>
+  <rect class="node" x="75" y="220" width="290" height="130" fill="#ffec99"/>
+  <text class="node-title" x="98" y="260">Next.js dashboard</text>
+  <text class="node-copy" x="98" y="290"><tspan x="98">Create a supervisor or run;</tspan><tspan x="98" dy="21">inspect status and history.</tspan></text>
+  <path class="arrow" d="M365 285H430"/>
+  <rect class="node" x="430" y="220" width="290" height="130" fill="#ffd8a8"/>
+  <text class="node-title" x="453" y="260">FastAPI</text>
+  <text class="node-copy" x="453" y="290"><tspan x="453">Persist run metadata in</tspan><tspan x="453" dy="21">Supabase PostgreSQL.</tspan></text>
+  <path class="arrow" d="M720 285H785"/>
+  <rect class="node" x="785" y="220" width="290" height="130" fill="#ffc078"/>
+  <text class="node-title" x="808" y="260">Start Temporal workflow</text>
+  <text class="node-copy" x="808" y="290"><tspan x="808">One durable workflow</tspan><tspan x="808" dy="21">per order, on its task queue.</tspan></text>
+  <path class="arrow" d="M1075 285H1140"/>
+  <rect class="node" x="1140" y="220" width="220" height="130" fill="#ffd8a8"/>
+  <text class="node-title" x="1163" y="260">Temporal worker</text>
+  <text class="node-copy" x="1163" y="290"><tspan x="1163">Executes the</tspan><tspan x="1163" dy="21">workflow.</tspan></text>
+
+  <rect class="panel" x="42" y="435" width="1356" height="585" rx="22"/>
+  <text class="section" x="72" y="473">02 / WAIT, REASON, ACT, AND COMPLETE</text>
+  <rect class="node" x="75" y="545" width="300" height="150" fill="#ffd8a8"/>
+  <text class="node-title" x="98" y="585">OrderSupervisorWorkflow</text>
+  <text class="node-copy" x="98" y="615"><tspan x="98">Owns durable state, signals,</tspan><tspan x="98" dy="21">timers, and lifecycle.</tspan></text>
+  <path class="arrow" d="M375 620H440"/>
+  <polygon class="node" points="535,545 630,620 535,695 440,620" fill="#ffc9c9"/>
+  <text class="node-title" x="535" y="614" text-anchor="middle">Wake condition?</text>
+  <text class="node-copy" x="535" y="638" text-anchor="middle">event or timer</text>
+  <path class="arrow" d="M630 620H705"/>
+  <rect class="node" x="705" y="545" width="300" height="150" fill="#ffc078"/>
+  <text class="node-title" x="728" y="585">Run LangGraph agent</text>
+  <text class="node-copy" x="728" y="615"><tspan x="728">Evaluate context, recent events,</tspan><tspan x="728" dy="21">memory, and instructions.</tspan></text>
+  <path class="arrow" d="M1005 620H1070"/>
+  <polygon class="node" points="1165,545 1260,620 1165,695 1070,620" fill="#ffc9c9"/>
+  <text class="node-title" x="1165" y="614" text-anchor="middle">Decision</text>
+  <text class="node-copy" x="1165" y="638" text-anchor="middle">monitor / wait / act</text>
+
+  <path class="arrow" d="M1140 675V720H835V755"/>
+  <text class="label" x="900" y="711">intervene</text>
+  <rect class="node" x="680" y="755" width="310" height="125" fill="#ffd8a8"/>
+  <text class="node-title" x="703" y="795">Run action activity</text>
+  <text class="node-copy" x="703" y="824"><tspan x="703">Execute a selected tool and</tspan><tspan x="703" dy="21">persist its action result.</tspan></text>
+  <path class="arrow" d="M680 818H585"/>
+  <rect class="node" x="275" y="755" width="310" height="125" fill="#ffec99"/>
+  <text class="node-title" x="298" y="795">Update supervision state</text>
+  <text class="node-copy" x="298" y="824"><tspan x="298">Retain events, decisions,</tspan><tspan x="298" dy="21">and action outcomes.</tspan></text>
+
+  <path class="arrow" d="M1260 620V755"/>
+  <text class="label" x="1272" y="710">recommend complete</text>
+  <rect class="node" x="1020" y="755" width="315" height="125" fill="#ffc078"/>
+  <text class="node-title" x="1043" y="795">Workflow completion gate</text>
+  <text class="node-copy" x="1043" y="824"><tspan x="1043">Apply deterministic policy;</tspan><tspan x="1043" dy="21">finalize summary and learnings.</tspan></text>
+
+  <path class="arrow dashed" d="M430 880V930H225V695"/>
+  <text class="label" x="280" y="916">wait for the next event or scheduled wake-up</text>
+  <text class="label" x="80" y="977">External callers can signal events, instructions, pause, resume, feedback, or termination.</text>
+</svg>

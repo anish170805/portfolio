@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
+  <title id="title">Binance Futures Testnet bot order workflow</title>
+  <desc id="description">A CLI request is validated, routed to the matching market, limit, or stop order method, sent to Binance Futures Testnet, then summarized and logged.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0 0L10 5L0 10Z" fill="#b45309"/>
+    </marker>
+    <style>
+      text { font-family: Arial, sans-serif; fill: #3f2d1f; }
+      .title { font-size: 34px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #9a7b5f; }
+      .section { font-size: 15px; font-weight: 700; letter-spacing: 1.2px; fill: #9a5c1e; }
+      .node-title { font-size: 18px; font-weight: 700; }
+      .node-copy { font-size: 14px; fill: #604936; }
+      .label { font-size: 13px; font-weight: 700; fill: #9a5c1e; }
+      .panel { fill: #ffec99; fill-opacity: .16; stroke: #e6c46f; stroke-width: 1.5; }
+      .node { stroke: #b45309; stroke-width: 1.7; rx: 14; }
+      .arrow { fill: none; stroke: #b45309; stroke-width: 2; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 7 6; }
+    </style>
+  </defs>
+  <rect width="1440" height="1080" fill="#fffaf0"/>
+  <text class="title" x="60" y="58">Trading Bot — validating and routing an order</text>
+  <text class="subtitle" x="60" y="96">The Python CLI sends supported orders to Binance Futures Testnet, not a live exchange account.</text>
+
+  <rect class="panel" x="42" y="140" width="1356" height="315" rx="22"/>
+  <text class="section" x="72" y="178">01 / COLLECT AND VALIDATE INPUT</text>
+  <rect class="node" x="75" y="225" width="280" height="150" fill="#ffec99"/>
+  <text class="node-title" x="98" y="266">CLI order request</text>
+  <text class="node-copy" x="98" y="296"><tspan x="98">Symbol, BUY / SELL, type,</tspan><tspan x="98" dy="21">quantity, and optional prices.</tspan></text>
+  <path class="arrow" d="M355 300H430"/>
+  <rect class="node" x="430" y="225" width="350" height="150" fill="#ffd8a8"/>
+  <text class="node-title" x="453" y="266">Validate required fields</text>
+  <text class="node-copy" x="453" y="296"><tspan x="453">Check USDT symbol, side, positive</tspan><tspan x="453" dy="21">quantity, and order-specific prices.</tspan></text>
+  <path class="arrow" d="M780 300H850"/>
+  <polygon class="node" points="935,225 1020,300 935,375 850,300" fill="#ffc9c9"/>
+  <text class="node-title" x="935" y="295" text-anchor="middle">Valid?</text>
+  <text class="node-copy" x="935" y="318" text-anchor="middle">inputs</text>
+  <path class="arrow" d="M1020 300H1090V240H1135"/>
+  <text class="label" x="1050" y="286">no</text>
+  <rect class="node" x="1135" y="190" width="220" height="100" fill="#ffc9c9"/>
+  <text class="node-title" x="1158" y="230">Show validation error</text>
+  <text class="node-copy" x="1158" y="256">Do not submit request.</text>
+  <path class="arrow" d="M935 375V470H215V610"/>
+  <text class="label" x="950" y="440">yes</text>
+
+  <rect class="panel" x="42" y="500" width="1356" height="500" rx="22"/>
+  <text class="section" x="72" y="538">02 / ROUTE ORDER TYPE AND SUBMIT</text>
+  <rect class="node" x="75" y="610" width="280" height="205" fill="#ffec99"/>
+  <text class="node-title" x="98" y="650">Select order method</text>
+  <text class="node-copy" x="98" y="681"><tspan x="98">MARKET: symbol, side, quantity</tspan><tspan x="98" dy="24">LIMIT: add a limit price</tspan><tspan x="98" dy="24">STOP: add stop and limit prices</tspan></text>
+  <path class="arrow" d="M355 712H390"/>
+  <rect class="node" x="390" y="610" width="280" height="205" fill="#ffd8a8"/>
+  <text class="node-title" x="413" y="650">Binance REST client</text>
+  <text class="node-copy" x="413" y="681"><tspan x="413">Route to the matching client</tspan><tspan x="413" dy="24">method and submit the request.</tspan><tspan x="413" dy="24">Credentials come from env config.</tspan></text>
+  <path class="arrow" d="M670 712H705"/>
+  <rect class="node" x="705" y="610" width="280" height="205" fill="#ffc078"/>
+  <text class="node-title" x="728" y="650">Futures Testnet API</text>
+  <text class="node-copy" x="728" y="681"><tspan x="728">Receive the order request;</tspan><tspan x="728" dy="24">return an order ID or an</tspan><tspan x="728" dy="24">exchange / network error.</tspan></text>
+  <path class="arrow" d="M985 712H1015"/>
+  <rect class="node" x="1020" y="610" width="315" height="205" fill="#ffc9c9"/>
+  <text class="node-title" x="1043" y="650">Summarize and log</text>
+  <text class="node-copy" x="1043" y="681"><tspan x="1043">Report the outcome to the CLI;</tspan><tspan x="1043" dy="24">record requests, responses,</tspan><tspan x="1043" dy="24">and failures in the logs.</tspan></text>
+</svg>
