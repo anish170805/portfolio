@@ -13,7 +13,7 @@ const LOGOS: Partial<Record<ProjectId, string>> = {
   eera: "/logos/eera_logo.png",
   gyanpath: "/logos/GyanPath_logo.jpeg",
   nobrac: "/logos/nobrac_icon.png",
-  "screen-crawlers": "/logos/screencrawlers_logo.jfif",
+  "screen-crawlers": "/logos/screencrawlers_logo.jpg",
 };
 
 const ICONS = {

@@ -16,10 +16,10 @@ export function About() {
         <Reveal>
           <SectionLabel n="01." title="About Me" line />
 
-          <div className="mt-10 grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
+          <div className="mt-10 grid min-w-0 grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
             {/* Left: description */}
-            <div>
-              <h2 className="font-mono text-[clamp(34px,4vw,50px)] leading-[1.1] font-bold tracking-[-0.04em]">
+            <div className="min-w-0">
+              <h2 className="font-mono text-[clamp(26px,8vw,50px)] leading-[1.1] font-bold tracking-[-0.04em] break-words lg:text-[clamp(34px,4vw,50px)]">
                 More than just
                 <br />
                 code, it’s about
@@ -46,7 +46,7 @@ export function About() {
             </div>
 
             {/* Right: developer trading card */}
-            <div className="justify-self-center lg:justify-self-end">
+            <div className="w-full min-w-0 justify-self-center lg:justify-self-end">
               <TradingCard />
             </div>
           </div>

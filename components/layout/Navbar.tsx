@@ -129,7 +129,7 @@ export function Navbar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
-          className="mr-12 grid size-11 place-items-center border border-line md:hidden"
+          className="ml-auto mr-12 grid size-11 place-items-center border border-line md:hidden"
         >
           {open ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
         </button>

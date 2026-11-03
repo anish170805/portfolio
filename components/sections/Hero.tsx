@@ -81,11 +81,11 @@ export function Hero() {
     <section className="relative">
       <div aria-hidden className="hero-grid pointer-events-none absolute inset-0" />
 
-      <div className="wrap relative grid items-center gap-14 pt-12 pb-20 lg:grid-cols-[55fr_45fr] lg:pt-16">
+      <div className="wrap relative grid min-w-0 grid-cols-1 items-center gap-14 pt-12 pb-20 lg:grid-cols-[minmax(0,55fr)_minmax(0,45fr)] lg:pt-16">
         {/* Left column ~55% */}
-        <div>
+        <div className="min-w-0">
           <h1
-            className="hero-in font-mono text-[clamp(42px,5.8vw,72px)] leading-[1.1] font-bold tracking-[-0.04em]"
+            className="hero-in min-w-0 max-w-full font-mono text-[clamp(34px,10vw,72px)] leading-[1.1] font-bold tracking-[-0.04em] break-words"
             style={{ animationDelay: "0ms" }}
           >
             <span className="text-ink3">&gt;</span> Hello, I’m <span className="text-accent">Anish</span>{" "}
@@ -105,12 +105,12 @@ export function Hero() {
           </div>
 
           <div
-            className="hero-in mt-8 flex flex-wrap items-center gap-x-8 gap-y-4"
+            className="hero-in mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-4"
             style={{ animationDelay: "280ms" }}
           >
             <a
               href="#projects"
-              className="inline-flex h-12 items-center gap-2 border border-accent bg-accent px-7 text-[15px] font-medium text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover"
+              className="inline-flex h-12 items-center justify-center gap-2 border border-accent bg-accent px-7 text-[15px] font-medium text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover sm:justify-start"
             >
               View Projects
               <ArrowRight size={16} aria-hidden />
@@ -119,7 +119,7 @@ export function Hero() {
               href="https://drive.google.com/file/d/1RV0o92J_viwPxVrxPU6KZLHCL1RIiZ97/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2 border border-accent bg-accent px-5 text-[15px] text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover"
+              className="inline-flex h-12 items-center justify-center gap-2 border border-accent bg-accent px-5 text-[15px] text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover sm:justify-start"
             >
               Resume
               <ArrowUpRight size={16} aria-hidden />
@@ -128,7 +128,7 @@ export function Hero() {
               href={SCREEN_CRAWLERS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center gap-2 border border-accent bg-accent px-5 text-[15px] text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover"
+              className="inline-flex h-12 items-center justify-center gap-2 border border-accent bg-accent px-5 text-[15px] text-bg transition-colors duration-200 hover:border-accent-hover hover:bg-accent-hover sm:justify-start"
             >
               Try Screen Crawlers
               <ArrowUpRight size={16} aria-hidden />
@@ -138,7 +138,7 @@ export function Hero() {
 
         {/* Right column ~45%: terminal panel */}
         <div
-          className="hero-in relative flex lg:justify-end"
+          className="hero-in relative flex min-w-0 lg:justify-end"
           style={{ animationDelay: "240ms" }}
         >
           <div
