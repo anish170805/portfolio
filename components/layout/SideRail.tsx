@@ -83,7 +83,7 @@ export function SideRail() {
   return (
     <aside
       aria-label="Section progress"
-      className="fixed top-1/2 left-6 z-30 hidden -translate-y-1/2 flex-col items-center gap-5 xl:flex"
+      className="fixed top-1/2 left-0 z-30 hidden -translate-y-1/2 flex-col items-center gap-5 md:flex xl:left-6"
     >
       <a
         href="#top"
@@ -92,12 +92,12 @@ export function SideRail() {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
         }}
-        className="grid size-9 place-items-center border border-line text-ink2 transition-colors duration-200 hover:border-accent hover:text-accent"
+        className="grid size-8 place-items-center border border-line text-ink2 transition-colors duration-200 hover:border-accent hover:text-accent xl:size-9"
       >
         <ArrowUp size={16} aria-hidden />
       </a>
 
-      <nav className="relative w-11">
+      <nav className="relative w-8 xl:w-11">
         <span
           aria-hidden
           className="absolute top-[22px] bottom-[22px] left-1/2 w-px -translate-x-1/2 bg-line"
@@ -118,7 +118,7 @@ export function SideRail() {
                   onClick={(e) => go(e, id)}
                   aria-label={label}
                   aria-current={isActive ? "true" : undefined}
-                  className="group relative flex h-11 w-11 items-center justify-center"
+                  className="group relative flex h-11 w-8 items-center justify-center xl:w-11"
                 >
                   <span
                     aria-hidden
@@ -130,7 +130,7 @@ export function SideRail() {
                   />
                   <span
                     aria-hidden
-                    className="glass pointer-events-none absolute left-12 rounded-md px-2 py-1 font-label text-[10px] whitespace-nowrap text-ink2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+                    className="glass pointer-events-none absolute left-9 rounded-md px-2 py-1 font-label text-[10px] whitespace-nowrap text-ink2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 xl:left-12"
                   >
                     <span className="text-accent">{n}</span> {label}
                   </span>
